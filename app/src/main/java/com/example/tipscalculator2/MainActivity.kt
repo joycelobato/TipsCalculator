@@ -1,5 +1,8 @@
+@file:Suppress("NAME_SHADOWING")
+
 package com.example.tipscalculator2
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +11,14 @@ import com.example.tipscalculator2.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var percentage: Int = 0
+        var percentage = 0
         binding.rgOptionOne.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 percentage = 10
@@ -44,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             val totalTemp = totalTable / nPeople
             val tips = totalTemp * percentage
             val totalWithTips = totalTemp + tips
+            binding.tvResult.text= "Total com gorjetas $totalWithTips"
         }
     }
 }
