@@ -1,9 +1,12 @@
+
 package com.example.tipscalculator2
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tipscalculator2.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -14,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var percentage: Int = 0
+        var percentage = 0
         binding.rgOptionOne.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 percentage = 10
@@ -32,18 +35,39 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        binding.btnClean.setOnClickListener {
-            println("Joyce 1" + binding.tieTotal.text)
-            println("Joyce 1" + binding.tieNumberOfPeople.text)
-        }
+
 
         binding.btnCalculate.setOnClickListener {
-            val totalTable: Float = binding.tieTotal.text.toString().toFloat()
-            val nPeople: Int = binding.tieNumberOfPeople.text.toString().toInt()
+            val totalTableTemp = binding.tieTotal.text
+            val nPeopleTemp = binding.tieNumberOfPeople.text
 
-            val totalTemp = totalTable / nPeople
-            val tips = totalTemp * percentage
-            val totalWithTips = totalTemp + tips
+            if (totalTableTemp?.isEmpty() == true ||
+                nPeopleTemp?.isEmpty() == true
+
+            ) {
+
+                Snackbar
+                    .make(binding.tieTotal, "Preencha todos os campos", Snackbar.LENGTH_LONG)
+                    .show()
+
+
+            } else {
+                val totalTable: Float = totalTableTemp.toString().toFloat()
+                val nPeople: Int = nPeopleTemp.toString().toInt()
+
+                val totalTemp = totalTable / nPeople
+                val tips = totalTemp * percentage / 100
+                val totalWithTips = totalTemp + tips
+                binding.tvResult.text = "Total com gorjetas $$totalWithTips"
+            }
+            binding.btnClean.setOnClickListener {
+                binding.tvResult.text = ""
+                binding.tieTotal.setText("")
+                binding.tieNumberOfPeople.setText("")
+                binding.rgOptionOne.isChecked = false
+                binding.rgOptionTwo.isChecked = false
+                binding.rgOptionThree.isChecked = false
+            }
         }
     }
 }
