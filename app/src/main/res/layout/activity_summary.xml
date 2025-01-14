@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SummaryActivity">
+    tools:context=".SummaryActivity"
+    android:background="@color/light_yellow">
+
 
     <TextView
 
@@ -14,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_marginTop="160dp"
-        android:text="RESULTS"
+        android:text="@string/results"
+        android:textColor="@color/cream_color"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintHorizontal_bias="0.618"
@@ -26,8 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="See below the result of your bill"
+        android:text="@string/see_below_the_result_of_your_bill"
+        android:textColor="@color/dark_purple"
         android:textSize="16sp"
+        android:textStyle="bold"
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -36,7 +41,8 @@
         android:id="@+id/tv_total_table_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Table:"
+        android:text="@string/total_table"
+        android:textColor="@color/dark_purple"
         android:layout_marginTop="32dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tv_subtitle"
@@ -50,15 +56,17 @@
         app:layout_constraintTop_toTopOf="@+id/tv_total_table_label"
         android:layout_marginEnd="16dp"
         android:textSize="20sp"
-        tools:text="R$250" />
+        tools:text="R$250"
+        android:textColor="@color/dark_purple"/>
 
     <TextView
         android:id="@+id/tv_num_people_label"
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of People:"
+        android:text="@string/number_of_people"
         android:textSize="20sp"
+        android:textColor="@color/dark_purple"
         app:layout_constraintStart_toStartOf="@+id/tv_total_table_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_total_table_label" />
 
@@ -69,6 +77,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:textSize="20sp"
+        android:textColor="@color/dark_purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_num_people_label"
         tools:text="5" />
@@ -78,7 +87,8 @@
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Percentage:"
+        android:text="@string/percentage"
+        android:textColor="@color/dark_purple"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/tv_num_people_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_num_people_label" />
@@ -90,6 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:textSize="20sp"
+        android:textColor="@color/dark_purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_num_percentage_label"
         tools:text="15%" />
@@ -101,6 +112,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:outlineAmbientShadowColor="@color/yellowgold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_num_percentage_label" />
@@ -110,8 +122,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="TOTAL:"
-        android:textSize="24sp"
+        android:text="@string/total"
+        android:textColor="@color/cream_color"
+        android:textStyle="bold"
+        android:textSize="32sp"
         app:layout_constraintStart_toStartOf="@+id/tv_num_percentage_label"
         app:layout_constraintTop_toBottomOf="@+id/tv_num_percentage_label" />
 
@@ -123,6 +137,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_total_amount_label"
         android:textSize="24sp"
+        android:textColor="@color/dark_purple"
         android:maxLength="5"
         android:textStyle="bold"
         tools:text="57.50" />
@@ -132,7 +147,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="REFRESH"
+        android:text="@string/refresh"
+        android:textColor="@color/cream_color"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@color/dark_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">TipMe!</string>
+
+
+    <string name="tip_calculator">TIP$ CALCULATOR</string>
+    <string name="results">RESULTS</string>
+    <string name="see_below_the_result_of_your_bill">See below the result of your bill</string>
+    <string name="total_table">Total Table:</string>
+    <string name="number_of_people">Number of People:</string>
+    <string name="percentage">Percentage:</string>
+
+
+
+    <string name="total">TOTAL:</string>
+    <string name="refresh">REFRESH</string>
+    <string name="fill_in_the_fields_below_to_calculate_the_tip">Fill in the fields below to calculate the tip</string>
+    <string name="enter_the_bill_amount">Enter the bill amount:</string>
+    <string name="ex_100_00">Ex:100,00</string>
+    <string name="enter_the_number_of_people_at_the_table">Enter the number of people at the table:</string>
+    <string name="ex_4">Ex:4</string>
+    <string name="tip_percentage">Tip percentage:</string>
+    <string name="ex_10">Ex:10%</string>
+    <string name="clean">Clean</string>
 </resources>
